@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/05 00:15:39 by fras          ########   odam.nl          #
+#    Updated: 2023/07/05 21:47:31 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,9 +16,10 @@ CFLAGS = -Werror -Wextra -Wall
 INCLUDE = -I include
 SRC_DIR = src
 OBJ_DIR = obj
-SERVER_SOURCES = server.c
+SERVER_SOURCES = $(addprefix $(SRC_DIR)/server/, server.c)
 SERVER_OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SERVER_SOURCES:%.c=%.o))
-CLIENT_SOURCES = client.c
+# CLIENT_SOURCES = $(addprefix $(SRC_DIR)/client/, client.c)
+CLIENT_SOURCES = $(shell find $(SRC_DIR)/client -type f -name "*.c")
 CLIENT_OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(CLIENT_SOURCES:%.c=%.o))
 RM = rm -f
 
