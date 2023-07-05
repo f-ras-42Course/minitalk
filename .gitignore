@@ -7,5 +7,3 @@ a.out
 *.dSYM
 test
 test.c
-server
-client
