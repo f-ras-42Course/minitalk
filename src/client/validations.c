@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 21:12:50 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:34:22 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/06 23:03:12 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ bool	user_mistake(t_user_error code)
 	if (code == unexpected_argument_qty)
 		write(STDERR_FILENO,"ERROR: expected one argument.\n", 31);
 	if (code == invalid_PID_format)
-		write(STDERR_FILENO,"ERROR: expects only digits in PID format.\n", 43);
+		write(STDERR_FILENO,"ERROR: only digits in PID format allowed.\n", 43);
 	if (code == pid_max_exceeded)
 		write(STDERR_FILENO, "ERROR: MAX_PID 4194304 exceeded.\n", 34);
 	return (true);
