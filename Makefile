@@ -6,14 +6,14 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/05 21:47:31 by fras          ########   odam.nl          #
+#    Updated: 2023/07/06 21:07:41 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = server client
 CC = gcc
 CFLAGS = -Werror -Wextra -Wall
-INCLUDE = -I include
+INCLUDE = -I include -I $(EXTLIB_DIR)/include
 SRC_DIR = src
 OBJ_DIR = obj
 SERVER_SOURCES = $(addprefix $(SRC_DIR)/server/, server.c)
@@ -22,6 +22,11 @@ SERVER_OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SERVER_SOURCES:%.c=%.o))
 CLIENT_SOURCES = $(shell find $(SRC_DIR)/client -type f -name "*.c")
 CLIENT_OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(CLIENT_SOURCES:%.c=%.o))
 RM = rm -f
+
+# Libraries
+LIB_DIR = lib
+EXTLIB_DIR = $(LIB_DIR)/libs42
+LIBRARIES = $(addprefix $(LIB_DIR)/, libft.a libftprintf.a lib42extended.a)
 
 ifdef DEBUG
 CFLAGS += -g
@@ -36,12 +41,12 @@ endif
 
 all: $(NAME)
 
-server:	$(SERVER_OBJECTS)
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(SERVER_OBJECTS)
+server: $(LIBRARIES) $(SERVER_OBJECTS)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(SERVER_OBJECTS) $(LIBRARY_PATHS)
 	@$(MAKE) message EXECUTABLE=$@
 
-client: $(CLIENT_OBJECTS)
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(CLIENT_OBJECTS)
+client: $(LIBRARIES) $(CLIENT_OBJECTS)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(CLIENT_OBJECTS) $(LIBRARIES)
 	@$(MAKE) message EXECUTABLE=$@
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
@@ -52,18 +57,23 @@ mandatory: $(NAME)
 
 bonus: $(BONUS)
 
+# Libraries
+$(LIBRARIES): $(EXTLIB_DIR)/$(@F)
+	$(MAKE) -C $(EXTLIB_DIR) $(@F)
+	cp $(EXTLIB_DIR)/$(@F) $@
+
 # Directories
 directories:
 	@find $(SRC_DIR) -type d | sed 's/$(SRC_DIR)/$(OBJ_DIR)/' | xargs mkdir -p
 
 # Cleaning
 clean:
-	$(RM) $(OBJECTS)
 	$(RM) -r obj
 
 fclean: clean
+	$(MAKE) -C $(EXTLIB_DIR) $@
+	$(RM) $(LIBRARIES)
 	$(RM) $(NAME)
-	$(RM) $(CLIENT)
 
 re: fclean all
 
