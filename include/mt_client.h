@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:42:09 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 22:33:27 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/06 23:10:50 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef enum e_user_error
 	pid_max_exceeded
 }	t_user_error;
 
-bool	is_invalid_userinput(int argc, char **argv);
+bool	invalid_userinput(int argc, char **argv);
 bool	user_mistake(t_user_error code);
 
 #endif
