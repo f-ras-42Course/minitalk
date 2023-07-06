@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/06 21:07:41 by fras          ########   odam.nl          #
+#    Updated: 2023/07/06 21:55:10 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,7 +42,7 @@ endif
 all: $(NAME)
 
 server: $(LIBRARIES) $(SERVER_OBJECTS)
-	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(SERVER_OBJECTS) $(LIBRARY_PATHS)
+	$(CC) $(CFLAGS) $(INCLUDE) -o $@ $(SERVER_OBJECTS) $(LIBRARIES)
 	@$(MAKE) message EXECUTABLE=$@
 
 client: $(LIBRARIES) $(CLIENT_OBJECTS)
