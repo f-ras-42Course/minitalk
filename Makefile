@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/06 22:52:56 by fras          ########   odam.nl          #
+#    Updated: 2023/07/06 22:53:50 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,6 +61,7 @@ bonus: $(BONUS)
 $(LIBRARIES): $(EXTLIB_DIR)/$(@F)
 	$(MAKE) -C $(EXTLIB_DIR) $(@F)
 	cp $(EXTLIB_DIR)/$(@F) $@
+	
 initialize_submodules:
 	git submodule update --init --recursive
 	git submodule foreach --recursive git checkout master
