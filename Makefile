@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/06 22:53:50 by fras          ########   odam.nl          #
+#    Updated: 2023/07/06 22:54:36 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -61,15 +61,6 @@ bonus: $(BONUS)
 $(LIBRARIES): $(EXTLIB_DIR)/$(@F)
 	$(MAKE) -C $(EXTLIB_DIR) $(@F)
 	cp $(EXTLIB_DIR)/$(@F) $@
-	
-initialize_submodules:
-	git submodule update --init --recursive
-	git submodule foreach --recursive git checkout master
-
-update_submodules:
-	git submodule update --recursive
-	git submodule foreach --recursive git fetch
-	git submodule foreach git merge origin master
 
 # Directories
 directories:
@@ -100,3 +91,13 @@ resan: fclean fsan
 # Info Message
 message:
 	@echo "\033[92m$(EXECUTABLE) is ready for usage!\033[0m"
+
+# Submodule functions
+initialize_submodules:
+	git submodule update --init --recursive
+	git submodule foreach --recursive git checkout master
+
+update_submodules:
+	git submodule update --recursive
+	git submodule foreach --recursive git fetch
+	git submodule foreach git merge origin master
