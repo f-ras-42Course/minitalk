@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:40:08 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 23:46:00 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/08 16:49:01 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 int	main(void)
 {
-	printf("Server PID:\n%d\n\n", getpid());
-	printf("Running and waiting for signal...\n\n");
+	ft_printf("Server PID:\n%d\n\n", getpid());
+	ft_printf("Running and waiting for signal...\n\n");
 	while (1);
 	return (0);
 }
