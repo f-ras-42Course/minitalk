@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/06 22:54:36 by fras          ########   odam.nl          #
+#    Updated: 2023/07/08 16:48:38 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ RM = rm -f
 # Libraries
 LIB_DIR = lib
 EXTLIB_DIR = $(LIB_DIR)/libs42
-LIBRARIES = $(addprefix $(LIB_DIR)/, libft.a libftprintf.a lib42extended.a)
+LIBRARIES = $(addprefix $(LIB_DIR)/, libft.a libftprintf.a libftextended.a)
 
 ifdef DEBUG
 CFLAGS += -g

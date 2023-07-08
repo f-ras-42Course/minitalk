@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:42:09 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 23:10:50 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/08 16:49:40 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
 # include <stdbool.h>
 # include "libft.h"
 # include "ft_printf.h"
-# include "lib42-extended.h"
+# include "libftextended.h"
 
 typedef enum e_user_error
 {
