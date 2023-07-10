@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 21:12:50 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/06 23:44:45 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 15:24:43 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,6 @@ bool	user_mistake(t_user_error code)
 		write(STDERR_FILENO, "ERROR: expects only digits in PID format.\n", 43);
 	if (code == pid_max_exceeded)
 		write(STDERR_FILENO, "ERROR: MAX_PID 4194304 exceeded.\n", 34);
-	ft_printf("\nStart program with the following arguments: ");
-	ft_printf("./client [server PID] [\" string to send \"]\n");
+	ft_printf("\nusage: ./client [server PID] \"string to send\"\n");
 	return (true);
 }
