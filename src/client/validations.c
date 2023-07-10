@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/06 21:12:50 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 15:24:43 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 18:35:49 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ bool	invalid_userinput(int argc, char **argv)
 bool	user_mistake(t_user_error code)
 {
 	if (code == unexpected_argument_qty)
-		write(STDERR_FILENO, "ERROR: expected two arguments.\n", 31);
+		write(STDERR_FILENO, "ERROR: expected two arguments.\n", 32);
 	if (code == invalid_PID_format)
 		write(STDERR_FILENO, "ERROR: expects only digits in PID format.\n", 43);
 	if (code == pid_max_exceeded)
