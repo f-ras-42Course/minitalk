@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:42:12 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/08 16:49:27 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 18:19:36 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <unistd.h>
 # include <signal.h>
 # include <stdlib.h>
+# include "libft.h"
 # include "ft_printf.h"
 
 #endif
