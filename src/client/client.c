@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:40:12 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 20:16:06 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 20:25:54 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,9 @@ void	send_string_to_server_using_signals(int server_pid, char *str)
 
 void	convert_char_to_bitsignals(int server_pid, char c)
 {
-	char	bit_check = 0x1;
+	char	bit_check;
+
+	bit_check = 0x1;
 	while (bit_check)
 	{
 		if (c & bit_check)
