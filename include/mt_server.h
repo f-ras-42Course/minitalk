@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:42:12 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 18:19:36 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 20:04:41 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,5 +18,7 @@
 # include <stdlib.h>
 # include "libft.h"
 # include "ft_printf.h"
+
+void	signal_handler(int mode);
 
 #endif

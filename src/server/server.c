@@ -6,11 +6,22 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:40:08 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 20:03:35 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 20:04:54 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "mt_server.h"
+
+int	main(void)
+{
+	ft_printf("Server PID:\n%d\n\n", getpid());
+	ft_printf("Running and waiting for signal...\n\n");
+	signal(SIGUSR1, signal_handler);
+	signal(SIGUSR2, signal_handler);
+	while (1)
+		pause();
+	return (0);
+}
 
 void	signal_handler(int mode)
 {
@@ -27,15 +38,4 @@ void	signal_handler(int mode)
 		char_to_print = 0x0;
 		return ;
 	}
-}
-
-int	main(void)
-{
-	ft_printf("Server PID:\n%d\n\n", getpid());
-	ft_printf("Running and waiting for signal...\n\n");
-	signal(SIGUSR1, signal_handler);
-	signal(SIGUSR2, signal_handler);
-	while (1)
-		pause();
-	return (0);
 }
