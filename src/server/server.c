@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:40:08 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 18:28:15 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 19:31:02 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,19 +16,17 @@ void	signal_handler(int mode)
 {
 	static int	bit_position = 0x1;
 	static char	char_to_print;
-	
-	if(mode == SIGUSR2)
+
+	if (mode == SIGUSR2)
 		char_to_print |= bit_position;
 	bit_position <<= 1;
 	if (bit_position == 0x100)
 	{
 		ft_putchar_fd(char_to_print, STDOUT_FILENO);
 		bit_position = 0x1;
-		ft_printf("\nCHAR PRINTED.\n");
 		char_to_print = '\0';
 		return ;
 	}
-	ft_printf("Signal called.. bit_position no = %d, char_to_print = %d.\n", bit_position, char_to_print);
 }
 
 int	main(void)
@@ -40,4 +38,4 @@ int	main(void)
 	while (1)
 		pause();
 	return (0);
-}	
+}
