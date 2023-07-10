@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:42:09 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/08 16:49:40 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 20:06:32 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,5 +33,7 @@ typedef enum e_user_error
 
 bool	invalid_userinput(int argc, char **argv);
 bool	user_mistake(t_user_error code);
+void	send_string_to_server_using_signals(int server_pid, char *str);
+void	convert_char_to_bitsignals(int server_pid, char c);
 
 #endif
