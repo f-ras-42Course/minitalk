@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:40:08 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 19:31:02 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/10 20:03:35 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ void	signal_handler(int mode)
 	{
 		ft_putchar_fd(char_to_print, STDOUT_FILENO);
 		bit_position = 0x1;
-		char_to_print = '\0';
+		char_to_print = 0x0;
 		return ;
 	}
 }
