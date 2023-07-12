@@ -6,7 +6,7 @@
 /*   By: fras <fras@student.codam.nl>                 +#+                     */
 /*                                                   +#+                      */
 /*   Created: 2023/07/05 20:40:12 by fras          #+#    #+#                 */
-/*   Updated: 2023/07/10 20:25:54 by fras          ########   odam.nl         */
+/*   Updated: 2023/07/12 13:40:52 by fras          ########   odam.nl         */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@ int	main(int argc, char **argv)
 	if (invalid_userinput(argc, argv))
 		return (EXIT_FAILURE);
 	send_string_to_server_using_signals(atoi(argv[1]), argv[2]);
+	ft_printf("String sent to process %d.\n", atoi(argv[1]));
 	return (EXIT_SUCCESS);
 }
 
