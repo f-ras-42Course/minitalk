@@ -6,7 +6,7 @@
 #    By: fras <fras@student.codam.nl>                 +#+                      #
 #                                                    +#+                       #
 #    Created: 2023/07/04 22:00:29 by fras          #+#    #+#                  #
-#    Updated: 2023/07/08 16:48:38 by fras          ########   odam.nl          #
+#    Updated: 2023/07/14 13:25:58 by fras          ########   odam.nl          #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,7 @@ SRC_DIR = src
 OBJ_DIR = obj
 SERVER_SOURCES = $(addprefix $(SRC_DIR)/server/, server.c)
 SERVER_OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(SERVER_SOURCES:%.c=%.o))
-# CLIENT_SOURCES = $(addprefix $(SRC_DIR)/client/, client.c)
-CLIENT_SOURCES = $(shell find $(SRC_DIR)/client -type f -name "*.c")
+CLIENT_SOURCES = $(addprefix $(SRC_DIR)/client/, client.c validations.c)
 CLIENT_OBJECTS = $(patsubst $(SRC_DIR)/%,$(OBJ_DIR)/%,$(CLIENT_SOURCES:%.c=%.o))
 RM = rm -f
 
